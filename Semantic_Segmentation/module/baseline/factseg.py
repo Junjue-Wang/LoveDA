@@ -1,45 +1,10 @@
 import ever as er
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-from module.baseline.base import FPN, AssymetricDecoder
-import torch
+from module.baseline.semantic_fpn import FPN, AssymetricDecoder
 import torch.nn as nn
 import torch.nn.functional as F
 from segmentation_models_pytorch.encoders import get_encoder
-
-
-class JointLoss(nn.Module):
-    def __init__(self, ignore_index=-1, sample=None, ratio=0.):
-        super(JointLoss, self).__init__()
-        self.ignore_index = ignore_index
-        self.sample = sample
-        self.ratio = ratio
-        print('Sample:', sample)
-       
-
-    def forward(self, cls_pred, binary_pred, cls_true, instance_mask=None):
-        valid_mask = (cls_true != self.ignore_index)
-        fgp = torch.sigmoid(binary_pred)
-        clsp = torch.softmax(cls_pred, dim=1)
-        # numerator
-        joint_prob = torch.clone(clsp)
-        joint_prob[:, 0, :, :] = (1-fgp).squeeze(dim=1) * clsp[:, 0, :, :]
-        joint_prob[:, 1:, :, :] = fgp * clsp[:, 1:, :, :]
-        # # normalization factor, [B x 1 X H X W]
-        Z = torch.sum(joint_prob, dim=1, keepdim=True)
-        # cls prob, [B, N, H, W]
-        p_ci = joint_prob / (Z + 1e-8)
-
-        losses = F.nll_loss(torch.log(p_ci), cls_true.long(), ignore_index=self.ignore_index, reduction='none')
-        
-        if self.sample == 'SOM':
-            return som(losses, self.ratio)
-        elif self.sample == 'OHEM':
-            seg_weight = ohem_weight(p_ci, cls_true.long(), thresh=self.ratio)
-            return (seg_weight * losses).sum() / seg_weight.sum()
-        else:
-            return losses.sum() / valid_mask.sum()
+from module.loss import binary_cross_entropy_with_logits
+import torch
 
 @er.registry.MODEL.register()
 class FactSeg(er.ERModule):
@@ -51,20 +16,14 @@ class FactSeg(er.ERModule):
         self.fgfpn = FPN(**self.config.foreground.fpn)
         self.bifpn = FPN(**self.config.binary.fpn)
         # decoder
-        
         self.fg_decoder = AssymetricDecoder(**self.config.foreground.assymetric_decoder)
-      
         self.bi_decoder = AssymetricDecoder(**self.config.binary.assymetric_decoder)
-        
+
         self.fg_cls = nn.Conv2d(self.config.foreground.out_channels, self.config.classes, kernel_size=1)
         self.bi_cls = nn.Conv2d(self.config.binary.out_channels, 1, kernel_size=1)
 
-        # loss
-        if 'joint_loss' in self.config.loss:
-            self.joint_loss = JointLoss(**self.config.loss.joint_loss)
+
     def forward(self, x, y=None):
-        
-    
         feat_list = self.en(x)[1:]
         if 'skip_decoder' in self.config.foreground:
             fg_out = self.fgskip_deocder(feat_list)
@@ -79,28 +38,18 @@ class FactSeg(er.ERModule):
         fg_pred = self.fg_cls(fg_out)
         bi_pred = self.bi_cls(bi_out)
         fg_pred = F.interpolate(fg_pred, scale_factor=4.0, mode='bilinear',
-                                 align_corners=True)
+                                align_corners=True)
         bi_pred = F.interpolate(bi_pred, scale_factor=4.0, mode='bilinear',
                                 align_corners=True)
         if self.training:
             cls_true = y['cls']
-            if 'joint_loss' in self.config.loss:
-                return dict(joint_loss =self.joint_loss(fg_pred, bi_pred, cls_true))
-            else:
-                return self.cls_loss(fg_pred, bi_pred.squeeze(dim=1), cls_true)
-        
+            cls_loss = F.cross_entropy(fg_pred, cls_true.long(), ignore_index=-1)
+            bi_true = torch.where(cls_true>0, torch.ones_like(cls_true), torch.zeros_like(cls_true))
+            bi_true[cls_true == -1] = -1
+            bi_loss = binary_cross_entropy_with_logits(bi_pred, bi_true, ignore_index=-1)
+            return dict(cls_loss=cls_loss, bi_loss=bi_loss)
         else:
-            if 'joint_loss' in self.config.loss:
-                binary_prob = torch.sigmoid(bi_pred)
-                cls_prob = torch.softmax(fg_pred, dim=1)
-                cls_prob[:, 0, :, :] = cls_prob[:, 0, :, :] * (1- binary_prob).squeeze(dim=1)
-                cls_prob[:, 1:, :, :] = cls_prob[:, 1:, :, :] * binary_prob
-                Z = torch.sum(cls_prob, dim=1, keepdim=True)
-                cls_prob = cls_prob.div_((Z+ 1e-8))
-                return cls_prob
-            else:
-                return torch.softmax(fg_pred, dim=1)
-
+            return fg_pred.softmax(dim=1)
 
 
     def set_default_config(self):
@@ -137,9 +86,4 @@ class FactSeg(er.ERModule):
                     out_feat_output_stride=4,
                 ),
             ),
-            loss=dict(
-              joint_loss=dict(
-                
-              )
-            )
         ))
