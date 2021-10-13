@@ -13,7 +13,7 @@ LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segment
 
 
 ## Citation
-If you use FactSeg in your research, please cite our coming TGRS paper.
+If you use FactSeg in your research, please cite our coming NeurIPS2021 paper.
 ```text
     @inproceedings{
     wang2021loveda,
