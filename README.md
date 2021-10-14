@@ -9,7 +9,7 @@
 
 
 This is an official implementation of LoveDA in our NeurIPS2021 Benchmark and Dataset Track paper "
-<a href="https://www.researchgate.net/publication/353357122_FactSeg_Foreground_Activation_Driven_Small_Object_Semantic_Segmentation_in_Large-Scale_Remote_Sensing_Imagery">
+<a href="https://openreview.net/forum?id=bLBIbVaGDu&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DNeurIPS.cc%2F2021%2FTrack%2FDatasets_and_Benchmarks%2FRound2%2FAuthors%23your-submissions)">
 LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation</a>"
 
 
