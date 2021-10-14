@@ -4,7 +4,7 @@
 
 <div align="center">
   <img src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/LoveDA.jpg?raw=true">
-  <img src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/division.png?raw=true">
+  <img width="150px" height="200px" src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/division.png?raw=true">
 </div>
 
 
