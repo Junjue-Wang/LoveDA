@@ -3,7 +3,8 @@
 <h5 align="right">by <a href="https://junjue-wang.github.io/homepage/">Junjue Wang</a>, <a href="http://zhuozheng.top/">Zhuo Zheng</a>, Ailong Ma, Xiaoyan Lu, and <a href="http://rsidea.whu.edu.cn/">Yanfei Zhong</a></h5>
 
 <div align="center">
-  <img src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA.jpg?raw=true"><br><br>
+  <img src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/LoveDA.jpg?raw=true">
+  <img src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/division.png?raw=true">
 </div>
 
 

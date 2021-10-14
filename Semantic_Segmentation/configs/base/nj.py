@@ -17,11 +17,11 @@ data = dict(
                 './LoveDA/Jiangxia/images_png/',
             ],
             mask_dir=[
-                 './LoveDA/Qinhuai/masks_png/',
+                './LoveDA/Qinhuai/masks_png/',
                 './LoveDA/Gulou/masks_png/',
                 './LoveDA/Qixia/masks_png/',
                 './LoveDA/Jianghan/masks_png/',
-                 './LoveDA/Pukou/masks_png/',
+                './LoveDA/Pukou/masks_png/',
                 './LoveDA/Lishui/masks_png/',
                 './LoveDA/Gaochun/masks_png/',
                 './LoveDA/Jiangxia/masks_png/',
@@ -50,20 +50,17 @@ data = dict(
         type='NJLoader',
         params=dict(
             image_dir=[
-                './LoveDA/Jiangning/images_png/',
-                './LoveDA/Xinbei/images_png/',
-                './LoveDA/Liyang/images_png/',
-                 './LoveDA/Jianye/images_png/',
-                './LoveDA/Wuchang/images_png/',
-                './LoveDA/Wujin/images_png/',
+                './LoveDA/Yuhuatai/images_png/',
+                './LoveDA/Liuhe/images_png/',
+                './LoveDA/Jintan/images_png/',
+                 './LoveDA/Huangpi/images_png/',
+
             ],
             mask_dir=[
-                './LoveDA/Jiangning/masks_png/',
-                './LoveDA/Xinbei/masks_png/',
-                './LoveDA/Liyang/masks_png/',
-                './LoveDA/Jianye/masks_png/',
-                './LoveDA/Wuchang/masks_png/',
-                 './LoveDA/Wujin/masks_png/',
+                './LoveDA/Yuhuatai/masks_png/',
+                './LoveDA/Liuhe/masks_png/',
+                './LoveDA/Jintan/masks_png/',
+                './LoveDA/Huangpi/masks_png/',
             ],
             transforms=Compose([
                 Normalize(mean=(123.675, 116.28, 103.53),

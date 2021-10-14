@@ -128,7 +128,7 @@ def main():
                 # mix_cfg['mask_dir'].append(save_pseudo_label_path)
                 # mix_trainloader = Iterator(NJLoader(mix_cfg))
                 target_config = cfg.TARGET_DATA_CONFIG
-                target_config['mask_dir'] = [save_pseudo_label_path]
+                target_config['mask_dir'] = save_pseudo_label_path
                 logger.info(target_config)
                 targetloader = NJLoader(target_config)
                 targetloader_iter = Iterator(targetloader)

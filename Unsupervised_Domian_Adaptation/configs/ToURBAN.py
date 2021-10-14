@@ -22,14 +22,12 @@ source_dir = dict(
 )
 target_dir = dict(
     image_dir=[
-        './LoveDA/Jianye/images_png/',
-        './LoveDA/Wuchang/images_png/',
-        './LoveDA/Wujin/images_png/',
+        './LoveDA/Yuhuatai/images_png/',
+        './LoveDA/Jintan/images_png/',
     ],
     mask_dir=[
-        './LoveDA/Jianye/masks_png/',
-        './LoveDA/Wuchang/masks_png/',
-         './LoveDA/Wujin/masks_png/',
+        './LoveDA/Yuhuatai/masks_png/',
+        './LoveDA/Jintan/masks_png/',
     ],
 )
 

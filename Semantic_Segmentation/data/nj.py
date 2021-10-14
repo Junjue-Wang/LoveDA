@@ -54,13 +54,15 @@ class NJDataset(Dataset):
     def __init__(self, image_dir, mask_dir, transforms=None):
         self.rgb_filepath_list = []
         self.cls_filepath_list= []
-        if isinstance(image_dir, list):
+        if isinstance(image_dir, list) and isinstance(mask_dir, list):
             for img_dir_path, mask_dir_path in zip(image_dir, mask_dir):
                 self.batch_generate(img_dir_path, mask_dir_path)
-        
+        elif isinstance(image_dir, list) and not isinstance(mask_dir, list):
+            for img_dir_path in image_dir:
+                self.batch_generate(img_dir_path, mask_dir)
         else:
             self.batch_generate(image_dir, mask_dir)
-        logger.info('Total -- Dataset images: %d' % len(self.rgb_filepath_list))
+
         self.transforms = transforms
 
 
