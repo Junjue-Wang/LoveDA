@@ -41,4 +41,10 @@ bash ./scripts/eval_hrnetw32.sh
 bash ./scripts/train_deeplabv3p.sh
 ```
 
+### Predict Model
+```bash 
+bash ./scripts/predict.sh
+```
+
+Submit your test results on [LoveDA Semantic Segmentation Challenge](https://competitions.codalab.org/competitions/35865#) and you will get your Test score.
 

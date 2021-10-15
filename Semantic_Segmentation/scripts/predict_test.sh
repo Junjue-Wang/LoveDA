@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export CUDA_VISIBLE_DEVICES=0
+NUM_GPUS=1
+export PYTHONPATH=$PYTHONPATH:`pwd`
+ckpt_path='./log/normal_baseline/hrnetw32/model-15000.pth'
+config_path='baseline.hrnetw32'
+python predict.py --ckpt_path=${ckpt_path} --config_path=${config_path}
