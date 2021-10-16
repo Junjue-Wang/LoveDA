@@ -31,8 +31,7 @@ If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
 The LoveDA dataset is released at [Google Drive](https://drive.google.com/drive/folders/1ibYV0qwn4yuuh068Rnc-w4tPi0U0c-ti).
 You can develop your models on Train and Validation sets.
 
-Submit your test results on [LoveDA Semantic Segmentation Challenge](https://competitions.codalab.org/competitions/35865#), LoveDA Domain Adaptation Urban to Rural Challenge and 
-LoveDA Domain Adaptation Rural to Urban Challenge.
+Submit your test results on [LoveDA Semantic Segmentation Challenge](https://competitions.codalab.org/competitions/35865#), [LoveDA Unsupervised Domain Adaptation Challenge](https://competitions.codalab.org/competitions/35874).
 You will get your Test scores smoothly.
 
 Feel free to design your own models, and we are looking forward to your exciting results!
