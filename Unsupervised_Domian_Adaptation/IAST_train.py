@@ -3,7 +3,6 @@ import os.path as osp
 import torch.optim as optim
 from eval import evaluate_nj
 from utils.tools import *
-#from module.CLAN_G import Deeplabv2
 from module.Encoder import Deeplabv2
 from module.Discriminator import FCDiscriminator
 from data.nj import NJLoader
@@ -107,7 +106,6 @@ def main():
                 pseudo_pred_dir = generate_pseudo(model, evalloader, pseudo_dir, pseudo_dict=cfg.PSEIDO_DICT, logger=logger)
                 target_config = cfg.TARGET_DATA_CONFIG
                 target_config['mask_dir'] = pseudo_pred_dir
-                #target_config['batch_size'] = 2
                 logger.info(target_config)
                 targetloader = NJLoader(target_config)
                 targetloader_iter = Iterator(targetloader)
