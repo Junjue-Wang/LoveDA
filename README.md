@@ -28,7 +28,7 @@ If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
 ```
 
 
-## Dataset
+## Dataset and Contest
 The LoveDA dataset is released at [<b>Google Drive</b>](https://drive.google.com/drive/folders/1ibYV0qwn4yuuh068Rnc-w4tPi0U0c-ti).
 You can develop your models on Train and Validation sets.
 
