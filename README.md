@@ -35,3 +35,7 @@ Submit your test results on [<b>LoveDA Semantic Segmentation Challenge</b>](http
 You will get your Test scores smoothly.
 
 Feel free to design your own models, and we are looking forward to your exciting results!
+
+## License
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
+<img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br/><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.
