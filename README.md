@@ -37,13 +37,8 @@ If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
 
 
 ## Dataset and Contest
-The LoveDA dataset is released at [<b>Google Drive</b>](https://drive.google.com/drive/folders/1ibYV0qwn4yuuh068Rnc-w4tPi0U0c-ti).
-You can develop your models on Train and Validation sets.
 
-Submit your test results on [<b>LoveDA Semantic Segmentation Challenge</b>](https://competitions.codalab.org/competitions/35865#), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://competitions.codalab.org/competitions/35874).
-You will get your Test scores smoothly.
-
-Feel free to design your own models, and we are looking forward to your exciting results!
+Comming Soon~
 
 ## License
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
