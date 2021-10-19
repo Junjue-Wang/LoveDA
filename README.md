@@ -9,9 +9,18 @@
 
 
 This is an official implementation of LoveDA in our NeurIPS2021 Benchmark and Dataset Track paper "
-<a href="https://openreview.net/forum?id=bLBIbVaGDu&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DNeurIPS.cc%2F2021%2FTrack%2FDatasets_and_Benchmarks%2FRound2%2FAuthors%23your-submissions)">
+<a href="https://arxiv.org/pdf/2110.08733.pdf">
 LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation</a>"
 
+
+## Highlights
+1. 5927 high spatial resolution (0.3 m) remote sensing images from Nanjing, Changzhou, and Wuhan
+2. Focus on different geographical environments between Urban and Rural
+3. Advance both semantic segmentation and domain adaptation tasks
+4. Three considerable challenges:
+    * Multi-scale objects
+    * Complex background samples
+    * Inconsistent class distributions
 
 ## Citation
 If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
@@ -38,4 +47,4 @@ Feel free to design your own models, and we are looking forward to your exciting
 
 ## License
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
-<img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br/><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.
+<img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
