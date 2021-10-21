@@ -14,7 +14,7 @@ LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segment
 
 
 ## Highlights
-1. 5927 high spatial resolution (0.3 m) remote sensing images from Nanjing, Changzhou, and Wuhan
+1. 5987 high spatial resolution (0.3 m) remote sensing images from Nanjing, Changzhou, and Wuhan
 2. Focus on different geographical environments between Urban and Rural
 3. Advance both semantic segmentation and domain adaptation tasks
 4. Three considerable challenges:
@@ -37,9 +37,24 @@ If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
 
 
 ## Dataset and Contest
+The LoveDA dataset is released at [<b>Google Drive</b>](https://drive.google.com/drive/folders/1ibYV0qwn4yuuh068Rnc-w4tPi0U0c-ti?usp=sharing)
+and [<b>Baidu Drive</b>](https://pan.baidu.com/s/1YrU1Y4Y0dS0f_OOHXpzspQ) Code: 27vc
 
-Comming Soon~
+
+
+You can develop your models on Train and Validation sets.
+
+Submit your test results on [<b>LoveDA Semantic Segmentation Challenge</b>](https://competitions.codalab.org/competitions/35865#), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://competitions.codalab.org/competitions/35874).
+You will get your Test scores smoothly.
+
+Feel free to design your own models, and we are looking forward to your exciting results!
+
 
 ## License
+The owners of the data and of the copyright on the data are [RSIDEA](http://rsidea.whu.edu.cn/), Wuhan University.
+Use of the Google Earth images must respect the ["Google Earth" terms of use](https://about.google/brand-resource-center/products-and-services/geo-guidelines/).
+All images and their associated annotations in LoveDA can be used for academic purposes only,
+<span style="color:red"><b> but any commercial use is prohibited.</b></span>
+
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
 <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
