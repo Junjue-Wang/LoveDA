@@ -7,26 +7,18 @@ TARGET_SET = 'RURAL'
 
 source_dir = dict(
     image_dir=[
-        './LoveDA/Qinhuai/images_png/',
-        './LoveDA/Gulou/images_png/',
-        './LoveDA/Qixia/images_png/',
-        './LoveDA/Jianghan/images_png/',
+        './LoveDA/Train/Urban/images_png/',
     ],
     mask_dir=[
-         './LoveDA/Qinhuai/masks_png/',
-        './LoveDA/Gulou/masks_png/',
-        './LoveDA/Qixia/masks_png/',
-        './LoveDA/Jianghan/masks_png/',
+        './LoveDA/Train/Urban/masks_png/',
     ],
 )
 target_dir = dict(
     image_dir=[
-        './LoveDA/Liuhe/images_png/',
-        './LoveDA/Huangpi/images_png/',
+        './LoveDA/Val/Rural/images_png/',
     ],
     mask_dir=[
-        './LoveDA/Liuhe/masks_png/',
-        './LoveDA/Huangpi/masks_png/',
+        './LoveDA/Val/Rural/masks_png/',
     ],
 )
 
