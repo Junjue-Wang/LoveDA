@@ -54,7 +54,7 @@ Feel free to design your own models, and we are looking forward to your exciting
 The owners of the data and of the copyright on the data are [RSIDEA](http://rsidea.whu.edu.cn/), Wuhan University.
 Use of the Google Earth images must respect the ["Google Earth" terms of use](https://about.google/brand-resource-center/products-and-services/geo-guidelines/).
 All images and their associated annotations in LoveDA can be used for academic purposes only,
-<span style="color:red"><b> but any commercial use is prohibited.</b></span>
+<font color="red"><b> but any commercial use is prohibited.</b></font>
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
 <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
