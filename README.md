@@ -44,6 +44,11 @@ and [<b>Baidu Drive</b>](https://pan.baidu.com/s/1YrU1Y4Y0dS0f_OOHXpzspQ) Code: 
 
 You can develop your models on Train and Validation sets.
 
+Classes indexes: background – 1, building – 2, road – 3,
+                 water – 4, barren – 5,forest – 6, agriculture – 7. And the no-data regions were assigned 0
+                 which should be ignored. The provided data loader will help you construct your pipeline.  
+                 
+
 Submit your test results on [<b>LoveDA Semantic Segmentation Challenge</b>](https://competitions.codalab.org/competitions/35865#), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://competitions.codalab.org/competitions/35874).
 You will get your Test scores smoothly.
 
