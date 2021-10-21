@@ -19,7 +19,7 @@ This is an initial benchmark for Land-cover Semantic Segmentation.
 
 ### Install Ever + Segmentation Models PyTorch
 ```bash
-pip install --upgrade git+https://gitee.com/zhuozheng/ever_lite.git@v1.4.5
+pip install ever-beta==0.2.3
 pip install git+https://github.com/qubvel/segmentation_models.pytorch
 ```
 
