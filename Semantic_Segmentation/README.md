@@ -29,8 +29,14 @@ pip install git+https://github.com/qubvel/segmentation_models.pytorch
 ln -s </path/to/LoveDA> ./LoveDA
 ```
 
-### Evaluate Model 
-Some examples:
+### Evaluate Model on the eval set
+#### 1. Download the pre-trained [<b>weights</b>](https://github.com/Junjue-Wang/LoveDA/releases/tag/v0.2.0-alpha)
+#### 2. Move weight file to log directory
+```bash
+mkdir -vp ./log/
+mv ./hrnetw32.pth ./log/hrnetw32.pth
+```
+#### 3. Evaluate on eval set
 ```bash
 bash ./scripts/eval_hrnetw32.sh
 ```
