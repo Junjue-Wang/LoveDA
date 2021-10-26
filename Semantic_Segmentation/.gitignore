@@ -4,3 +4,4 @@
 out
 gen
 ./log/
+./convert.py

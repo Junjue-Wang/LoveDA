@@ -11,11 +11,6 @@ This is an initial benchmark for Unsupervised Domain Adaptation.
 
 
 ## Getting Started
-### Install Ever_lite
-
-```bash
-pip install --upgrade git+https://gitee.com/zhuozheng/ever_lite.git@v1.4.5
-```
 
 #### Requirements:
 - pytorch >= 1.7.0

@@ -13,9 +13,9 @@ import os
 
 parser = argparse.ArgumentParser(description='Eval methods')
 parser.add_argument('--ckpt_path',  type=str,
-                    help='ckpt path', default='./log/deeplabv3p.pth')
+                    help='ckpt path', default='./log/hrnetw32.pth')
 parser.add_argument('--config_path',  type=str,
-                    help='config path', default='baseline.deeplabv3p')
+                    help='config path', default='baseline.hrnetw32')
 parser.add_argument('--out_dir',  type=str,
                     help='out dir', default='./out')
 args = parser.parse_args()

@@ -32,18 +32,17 @@ ln -s </path/to/LoveDA> ./LoveDA
 ### Evaluate Model 
 Some examples:
 ```bash
-bash ./scripts/eval_deeplabv3p.sh
 bash ./scripts/eval_hrnetw32.sh
 ```
 
 ### Train Model
 ```bash 
-bash ./scripts/train_deeplabv3p.sh
+bash ./scripts/train_hrnetw32.sh
 ```
 
 ### Predict Model
 ```bash 
-bash ./scripts/predict.sh
+bash ./scripts/predict_test.sh
 ```
 
 Submit your test results on [LoveDA Semantic Segmentation Challenge](https://competitions.codalab.org/competitions/35865#) and you will get your Test score.
