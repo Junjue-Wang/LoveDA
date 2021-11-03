@@ -3,7 +3,7 @@ import logging
 logger = logging.getLogger(__name__)
 from utils.tools import *
 from ever.util.param_util import count_model_parameters
-
+from module.viz import VisualizeSegmm
 
 
 
@@ -11,10 +11,10 @@ def evaluate_nj(model, cfg, is_training=False, ckpt_path=None, logger=None):
     #torch.backends.cudnn.deterministic = True
     #torch.backends.cudnn.benchmark = False
     #torch.backends.cudnn.enabled = False
-    # if cfg.SNAPSHOT_DIR is not None:
-    #     vis_dir = os.path.join(cfg.SNAPSHOT_DIR, 'vis-{}'.format(os.path.basename(ckpt_path)))
-    #     palette = np.asarray(list(COLOR_MAP.values())).reshape((-1,)).tolist()
-    #     viz_op = er.viz.VisualizeSegmm(vis_dir, palette)
+    if cfg.SNAPSHOT_DIR is not None:
+        vis_dir = os.path.join(cfg.SNAPSHOT_DIR, 'vis-{}'.format(os.path.basename(ckpt_path)))
+        palette = np.asarray(list(COLOR_MAP.values())).reshape((-1,)).tolist()
+        viz_op = VisualizeSegmm(vis_dir, palette)
     if not is_training:
         model_state_dict = torch.load(ckpt_path)
         model.load_state_dict(model_state_dict,  strict=True)
@@ -24,7 +24,6 @@ def evaluate_nj(model, cfg, is_training=False, ckpt_path=None, logger=None):
     print(cfg.EVAL_DATA_CONFIG)
     eval_dataloader = NJLoader(cfg.EVAL_DATA_CONFIG)
     metric_op = er.metric.PixelMetric(len(COLOR_MAP.keys()), logdir=cfg.SNAPSHOT_DIR, logger=logger)
-    #pdb.set_trace()
     with torch.no_grad():
         for ret, ret_gt in tqdm(eval_dataloader):
             ret = ret.to(torch.device('cuda'))
@@ -38,9 +37,9 @@ def evaluate_nj(model, cfg, is_training=False, ckpt_path=None, logger=None):
             y_pred = cls[mask].ravel()
             metric_op.forward(y_true, y_pred)
             
-            # if cfg.SNAPSHOT_DIR is not None:
-            #     for fname, pred in zip(ret_gt['fname'], cls):
-            #         viz_op(pred, fname.replace('tif', 'png'))
+            if cfg.SNAPSHOT_DIR is not None:
+                for fname, pred in zip(ret_gt['fname'], cls):
+                    viz_op(pred, fname.replace('tif', 'png'))
 
     metric_op.summary_all()
     torch.cuda.empty_cache()

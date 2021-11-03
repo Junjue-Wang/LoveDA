@@ -7,6 +7,7 @@ from tqdm import tqdm
 import random
 from module.tta import tta, Scale
 
+
 er.registry.register_all()
 
 

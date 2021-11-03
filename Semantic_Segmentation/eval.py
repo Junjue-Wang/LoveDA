@@ -1,15 +1,17 @@
 import ever as er
 from ever.core.builder import make_model, make_dataloader
 import torch
-import numpy as np
 import os
-# from data.nj import COLOR_MAP
+from data.nj import COLOR_MAP
 from tqdm import tqdm
 from module.tta import tta, Scale
+from module.viz import VisualizeSegmm
 import logging
 from ever.core.checkpoint import load_model_state_dict_from_ckpt
 from ever.core.config import import_config
+import numpy as np
 from train import seed_torch
+
 import argparse
 
 parser = argparse.ArgumentParser(description='Eval methods')
@@ -39,9 +41,9 @@ def evaluate(ckpt_path, config_path='base.hrnetw32', use_tta=False):
     model.eval()
 
     metric_op = er.metric.PixelMetric(7, logdir=log_dir, logger=logger)
-    # vis_dir = os.path.join(log_dir, 'vis-{}'.format(os.path.basename(ckpt_path)))
-    # palette = np.array(list(COLOR_MAP.values())).reshape(-1).tolist()
-    # viz_op = er.viz.VisualizeSegmm(vis_dir, palette)
+    vis_dir = os.path.join(log_dir, 'vis-{}'.format(os.path.basename(ckpt_path)))
+    palette = np.array(list(COLOR_MAP.values())).reshape(-1).tolist()
+    viz_op = VisualizeSegmm(vis_dir, palette)
 
     with torch.no_grad():
         for img, gt in tqdm(test_dataloader):
@@ -64,8 +66,8 @@ def evaluate(ckpt_path, config_path='base.hrnetw32', use_tta=False):
             valid_inds = y_true != -1
             metric_op.forward(y_true[valid_inds], pred[valid_inds])
 
-            # for clsmap, imname in zip(pred, gt['fname']):
-            #     viz_op(clsmap.cpu().numpy().astype(np.uint8), imname.replace('tif', 'png'))
+            for clsmap, imname in zip(pred, gt['fname']):
+                viz_op(clsmap.cpu().numpy().astype(np.uint8), imname.replace('tif', 'png'))
     metric_op.summary_all()
     torch.cuda.empty_cache()
 
