@@ -13,6 +13,14 @@ This is an official implementation of LoveDA in our NeurIPS2021 Benchmark and Da
 LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation</a>"
 
 
+## News
+- 2021/11/11, LoveDA has been included in [MMsegmentation](https://github.com/open-mmlab/mmsegmentation).
+Please follow the official MMsegmentation [INSTALL.md](docs/install.md) and [getting_started.md](docs/getting_started.md) for installation and dataset preparation.
+🔥🔥 The LoveDA is on [MMsegmentation](https://github.com/Junjue-Wang/mmsegmentation/blob/New_LoveDA/mmseg/datasets/loveda.py). 🔥🔥 
+
+
+
+
 ## Highlights
 1. 5987 high spatial resolution (0.3 m) remote sensing images from Nanjing, Changzhou, and Wuhan
 2. Focus on different geographical environments between Urban and Rural
