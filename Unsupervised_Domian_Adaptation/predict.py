@@ -4,15 +4,13 @@ from skimage.io import imsave
 import os
 
 
-
-
 def predict_test(model, cfg, ckpt_path=None, save_dir='./submit_test'):
     os.makedirs(save_dir, exist_ok=True)
     seed_torch(2333)
     model_state_dict = torch.load(ckpt_path)
     model.load_state_dict(model_state_dict,  strict=True)
 
-    count_model_parameters(model, logger)
+    count_model_parameters(model)
     model.eval()
     print(cfg.EVAL_DATA_CONFIG)
     eval_dataloader = NJLoader(cfg.EVAL_DATA_CONFIG)
@@ -32,7 +30,6 @@ if __name__ == '__main__':
     ckpt_path = './log/CBST_2Urban.pth'
     from module.Encoder import Deeplabv2
     cfg = import_config('st.cbst.2urban')
-    logger = get_console_file_logger(name='Baseline', logdir=cfg.SNAPSHOT_DIR)
     model = Deeplabv2(dict(
         backbone=dict(
             resnet_type='resnet50',
