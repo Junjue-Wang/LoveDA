@@ -6,14 +6,14 @@ import os.path as osp
 from module.Encoder import Deeplabv2
 from module.Discriminator import FCDiscriminator
 from module.loss import WeightedBCEWithLogitsLoss
-from data.nj import NJLoader
+from data.loveda import LoveDALoader
 from ever.core.iterator import Iterator
 from utils.tools import *
 import argparse
 from tqdm import tqdm
 from torch.nn.utils import clip_grad
 import torch.nn.functional as F
-from eval import evaluate_nj
+from eval import evaluate
 
 Lambda_weight = 0.01
 Lambda_local = 10
@@ -82,9 +82,9 @@ def main():
     count_model_parameters(model, logger)
     count_model_parameters(model_D, logger)
 
-    trainloader = NJLoader(cfg.SOURCE_DATA_CONFIG)
+    trainloader = LoveDALoader(cfg.SOURCE_DATA_CONFIG)
     trainloader_iter = Iterator(trainloader)
-    targetloader = NJLoader(cfg.TARGET_DATA_CONFIG)
+    targetloader = LoveDALoader(cfg.TARGET_DATA_CONFIG)
     targetloader_iter = Iterator(targetloader)
 
     optimizer = optim.SGD(model.parameters(),
@@ -227,7 +227,7 @@ def main():
             ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(cfg.NUM_STEPS_STOP) + '.pth')
             torch.save(model.state_dict(), osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(cfg.NUM_STEPS_STOP) + '.pth'))
             torch.save(model_D.state_dict(), osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(cfg.NUM_STEPS_STOP) + '_D.pth'))
-            evaluate_nj(model, cfg, True, ckpt_path, logger)
+            evaluate(model, cfg, True, ckpt_path, logger)
             break
 
         if i_iter % cfg.SAVE_PRED_EVERY == 0 and i_iter != 0:
@@ -235,7 +235,7 @@ def main():
             ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(i_iter) + '.pth')
             torch.save(model.state_dict(), osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(i_iter) + '.pth'))
             torch.save(model_D.state_dict(), osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(i_iter) + '_D.pth'))
-            evaluate_nj(model, cfg, True, ckpt_path, logger)
+            evaluate(model, cfg, True, ckpt_path, logger)
             model.train()
 
 if __name__ == '__main__':

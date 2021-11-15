@@ -1,4 +1,4 @@
-from data.nj import NJLoader
+from data.loveda import LoveDALoader
 import logging
 logger = logging.getLogger(__name__)
 from utils.tools import *
@@ -7,7 +7,7 @@ from module.viz import VisualizeSegmm
 
 
 
-def evaluate_nj(model, cfg, is_training=False, ckpt_path=None, logger=None):
+def evaluate(model, cfg, is_training=False, ckpt_path=None, logger=None):
     #torch.backends.cudnn.deterministic = True
     #torch.backends.cudnn.benchmark = False
     #torch.backends.cudnn.enabled = False
@@ -22,7 +22,7 @@ def evaluate_nj(model, cfg, is_training=False, ckpt_path=None, logger=None):
         count_model_parameters(model, logger)
     model.eval()
     print(cfg.EVAL_DATA_CONFIG)
-    eval_dataloader = NJLoader(cfg.EVAL_DATA_CONFIG)
+    eval_dataloader = LoveDALoader(cfg.EVAL_DATA_CONFIG)
     metric_op = er.metric.PixelMetric(len(COLOR_MAP.keys()), logdir=cfg.SNAPSHOT_DIR, logger=logger)
     with torch.no_grad():
         for ret, ret_gt in tqdm(eval_dataloader):

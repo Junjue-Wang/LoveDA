@@ -1,4 +1,4 @@
-from data.nj import NJLoader
+from data.loveda import LoveDALoader
 from utils.tools import *
 from skimage.io import imsave
 import os
@@ -13,7 +13,7 @@ def predict_test(model, cfg, ckpt_path=None, save_dir='./submit_test'):
     count_model_parameters(model)
     model.eval()
     print(cfg.EVAL_DATA_CONFIG)
-    eval_dataloader = NJLoader(cfg.EVAL_DATA_CONFIG)
+    eval_dataloader = LoveDALoader(cfg.EVAL_DATA_CONFIG)
 
     with torch.no_grad():
         for ret, ret_gt in tqdm(eval_dataloader):

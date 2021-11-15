@@ -3,10 +3,10 @@ import os.path as osp
 import torch.backends.cudnn as cudnn
 import torch.optim as optim
 import math
-from eval import evaluate_nj
+from eval import evaluate
 from utils.tools import *
 from module.Encoder import Deeplabv2
-from data.nj import NJLoader
+from data.loveda import LoveDALoader
 from utils.tools import COLOR_MAP
 from ever.core.iterator import Iterator
 from tqdm import tqdm
@@ -59,9 +59,9 @@ def main():
     )).cuda()
     
     
-    trainloader = NJLoader(cfg.SOURCE_DATA_CONFIG)
+    trainloader = LoveDALoader(cfg.SOURCE_DATA_CONFIG)
     trainloader_iter = Iterator(trainloader)
-    evalloader = NJLoader(cfg.EVAL_DATA_CONFIG)
+    evalloader = LoveDALoader(cfg.EVAL_DATA_CONFIG)
     # targetloader_iter = Iterator(targetloader)
     epochs = cfg.NUM_STEPS_STOP / len(trainloader)
     logger.info('epochs ~= %.3f' % epochs)
@@ -97,12 +97,12 @@ def main():
                 print('save model ...')
                 ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(cfg.NUM_STEPS_STOP) + '.pth')
                 torch.save(model.state_dict(), ckpt_path)
-                evaluate_nj(model, cfg, True, ckpt_path, logger)
+                evaluate(model, cfg, True, ckpt_path, logger)
                 break
             if i_iter % cfg.EVAL_EVERY == 0 and i_iter != 0:
                 ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(i_iter) + '.pth')
                 torch.save(model.state_dict(), ckpt_path)
-                evaluate_nj(model, cfg, True, ckpt_path, logger)
+                evaluate(model, cfg, True, ckpt_path, logger)
                 model.train()
         else:
             if i_iter % cfg.GENERATE_PSEDO_EVERY == 0 or targetloader is None:
@@ -130,7 +130,7 @@ def main():
                 target_config = cfg.TARGET_DATA_CONFIG
                 target_config['mask_dir'] = save_pseudo_label_path
                 logger.info(target_config)
-                targetloader = NJLoader(target_config)
+                targetloader = LoveDALoader(target_config)
                 targetloader_iter = Iterator(targetloader)
                 logger.info('###### Start model retraining dataset in round {}! ######'.format(i_iter))
 
@@ -174,12 +174,12 @@ def main():
                 print('save model ...')
                 ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(cfg.NUM_STEPS_STOP) + '.pth')
                 torch.save(model.state_dict(), ckpt_path)
-                evaluate_nj(model, cfg, True, ckpt_path, logger)
+                evaluate(model, cfg, True, ckpt_path, logger)
                 break
             if i_iter % cfg.EVAL_EVERY == 0 and i_iter != 0:
                 ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(i_iter) + '.pth')
                 torch.save(model.state_dict(), ckpt_path)
-                evaluate_nj(model, cfg, True, ckpt_path, logger)
+                evaluate(model, cfg, True, ckpt_path, logger)
                 model.train()
 
 

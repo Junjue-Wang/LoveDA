@@ -3,7 +3,7 @@ define the convolutinal gaussian blur
 define the softmax loss
 
 '''
-from data.nj import NJLoader
+from data.loveda import LoveDALoader
 from ever.core.iterator import Iterator
 import argparse
 import torch.nn as nn
@@ -18,7 +18,7 @@ from tqdm import tqdm
 from torch.nn.utils import clip_grad
 import os.path as osp
 import torch
-from eval import evaluate_nj
+from eval import evaluate
 
 parser = argparse.ArgumentParser(description='Run CLAN methods.')
 
@@ -34,20 +34,7 @@ def main():
     logger = get_console_file_logger(name='PyCDA', logdir=cfg.SNAPSHOT_DIR)
     
     # Create network
-    '''
-    model = PyCDA(dict(
-        backbone=dict(
-            resnet_type='resnet50',
-            output_stride=16,
-            pretrained=True,
-        ),
-        num_classes=7,
-        ppm=dict(
-            num_classes=7,
-            use_aux=False,
-        )
-    ))
-    '''
+
     model = Deeplabv2(
         dict(
         backbone=dict(
@@ -82,9 +69,9 @@ def main():
 
     model.train()
 
-    trainloader = NJLoader(cfg.SOURCE_DATA_CONFIG)
+    trainloader = LoveDALoader(cfg.SOURCE_DATA_CONFIG)
     trainloader_iter = Iterator(trainloader)
-    targetloader = NJLoader(cfg.TARGET_DATA_CONFIG)
+    targetloader = LoveDALoader(cfg.TARGET_DATA_CONFIG)
     targetloader_iter = Iterator(targetloader)
 
     epochs = cfg.NUM_STEPS_STOP / len(trainloader)
@@ -196,14 +183,14 @@ def main():
             print('save model ...')
             ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(cfg.NUM_STEPS_STOP) + '.pth')
             torch.save(model.state_dict(), ckpt_path)
-            evaluate_nj(model, cfg, True, ckpt_path=ckpt_path, logger=logger)
+            evaluate(model, cfg, True, ckpt_path=ckpt_path, logger=logger)
             break
 
         if i_iter % cfg.EVAL_EVERY == 0 and i_iter != 0:
             print('taking snapshot ...')
             ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(i_iter) + '.pth')
             torch.save(model.state_dict(), ckpt_path)
-            evaluate_nj(model, cfg, True, ckpt_path=ckpt_path, logger=logger)
+            evaluate(model, cfg, True, ckpt_path=ckpt_path, logger=logger)
             model.train()
 
 

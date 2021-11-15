@@ -3,10 +3,10 @@ import torch
 import torch.optim as optim
 import os.path as osp
 from module.Deeplabv2_MMD import Deeplabv2_MMD
-from data.nj import NJLoader
+from data.loveda import LoveDALoader
 from utils.tools import *
 from ever.core.iterator import Iterator
-from eval import evaluate_nj
+from eval import evaluate
 from tqdm import tqdm
 from torch.nn.utils import clip_grad
 import torch.backends.cudnn as cudnn
@@ -36,9 +36,9 @@ def main():
 
     cudnn.benchmark = True
 
-    trainloader = NJLoader(cfg.SOURCE_DATA_CONFIG)
+    trainloader = LoveDALoader(cfg.SOURCE_DATA_CONFIG)
     trainloader_iter = Iterator(trainloader)
-    targetloader = NJLoader(cfg.TARGET_DATA_CONFIG)
+    targetloader = LoveDALoader(cfg.TARGET_DATA_CONFIG)
     targetloader_iter = Iterator(targetloader)
     epochs = cfg.NUM_STEPS_STOP / len(trainloader)
     logger.info('epochs ~= %.3f' % epochs)
@@ -82,14 +82,14 @@ def main():
             print('save model ...')
             ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(cfg.NUM_STEPS_STOP) + '.pth')
             torch.save(model.state_dict(), ckpt_path)
-            evaluate_nj(model, cfg, True, ckpt_path, logger)
+            evaluate(model, cfg, True, ckpt_path, logger)
             break
 
         if i_iter % cfg.SAVE_PRED_EVERY == 0 and i_iter != 0:
             print('taking snapshot ...')
             ckpt_path = osp.join(cfg.SNAPSHOT_DIR, cfg.TARGET_SET + str(i_iter) + '.pth')
             torch.save(model.state_dict(), ckpt_path)
-            evaluate_nj(model, cfg, True, ckpt_path, logger)
+            evaluate(model, cfg, True, ckpt_path, logger)
             model.train()
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@ import ever as er
 from ever.core.builder import make_model, make_dataloader
 import torch
 import os
-from data.nj import COLOR_MAP
+from data.loveda import COLOR_MAP
 from tqdm import tqdm
 from module.tta import tta, Scale
 from module.viz import VisualizeSegmm

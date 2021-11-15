@@ -2,7 +2,7 @@ import ever as er
 import torch
 import numpy as np
 import os
-from data.nj import COLOR_MAP
+from data.loveda import COLOR_MAP
 from tqdm import tqdm
 import random
 from module.tta import tta, Scale
@@ -55,7 +55,7 @@ def register_evaluate_fn(launcher):
 
 def seed_torch(seed=2333):
     random.seed(seed)
-    os.environ['PYTHONHASHSEED'] = str(seed) # 为了禁止hash随机化，使得实验可复现
+    os.environ['PYTHONHASHSEED'] = str(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
