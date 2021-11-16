@@ -4,7 +4,7 @@ import torch
 import numpy as np
 from tqdm import tqdm
 import logging
-from ever.core.checkpoint import load_model_state_dict_from_ckpt
+from ever.core.checkpoint import remove_module_prefix
 from ever.core.config import import_config
 from train import seed_torch
 import argparse
@@ -29,7 +29,8 @@ er.registry.register_all()
 def predict_test(ckpt_path, config_path='base.hrnetw32', save_dir=''):
     os.makedirs(save_dir, exist_ok=True)
     cfg = import_config(config_path)
-    model_state_dict = load_model_state_dict_from_ckpt(ckpt_path)
+    statedict = torch.load(ckpt_path, map_location=lambda storage, loc: storage)
+    model_state_dict = remove_module_prefix(statedict)
     print('Load model!')
     test_dataloader = make_dataloader(cfg['data']['test'])
     model = make_model(cfg['model'])
