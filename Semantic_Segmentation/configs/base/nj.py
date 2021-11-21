@@ -4,7 +4,7 @@ import ever as er
 
 data = dict(
     train=dict(
-        type='NJLoader',
+        type='LoveDALoader',
         params=dict(
             image_dir=[
                 './LoveDA/Train/Urban/images_png/',
@@ -35,7 +35,7 @@ data = dict(
         ),
     ),
     test=dict(
-        type='NJLoader',
+        type='LoveDALoader',
         params=dict(
             image_dir=[
                 './LoveDA/Val/Urban/images_png/',
