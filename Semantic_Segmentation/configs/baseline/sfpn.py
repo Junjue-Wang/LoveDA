@@ -1,7 +1,7 @@
 import torch.nn as nn
 from simplecv.module import fpn
 
-from configs.base.nj import train, test, data, optimizer, learning_rate
+from configs.base.loveda import train, test, data, optimizer, learning_rate
 
 config = dict(
     model=dict(

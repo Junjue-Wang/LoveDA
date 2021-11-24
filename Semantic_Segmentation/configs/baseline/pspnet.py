@@ -1,4 +1,4 @@
-from configs.base.nj import train, test, data, optimizer, learning_rate
+from configs.base.loveda import train, test, data, optimizer, learning_rate
 import torch.nn as nn
 config = dict(
     model=dict(
