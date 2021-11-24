@@ -15,8 +15,7 @@ LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segment
 
 ## News
 - 2021/11/11, LoveDA has been included in [MMsegmentation](https://github.com/open-mmlab/mmsegmentation).
-Please follow the official MMsegmentation [INSTALL.md](docs/install.md) and [getting_started.md](docs/getting_started.md) for installation and dataset preparation.
-🔥🔥 The LoveDA is on [MMsegmentation](https://github.com/Junjue-Wang/mmsegmentation/blob/New_LoveDA/mmseg/datasets/loveda.py). 🔥🔥 
+🔥🔥 The Semantic Segmentation task can be prepared follow [dataset_prepare.md](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/dataset_prepare.md#loveda).🔥🔥 
 
 
 
