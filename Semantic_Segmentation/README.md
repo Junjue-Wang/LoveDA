@@ -40,7 +40,7 @@ mv ./hrnetw32.pth ./log/hrnetw32.pth
 ```bash 
 bash ./scripts/predict_test.sh
 ```
-Submit your test results on [LoveDA Semantic Segmentation Challenge](https://competitions.codalab.org/competitions/35865#) and you will get your Test score.
+Submit your test results on [LoveDA Semantic Segmentation Challenge](https://codalab.lisn.upsaclay.fr/competitions/421) and you will get your Test score.
 
 
 ### Train Model

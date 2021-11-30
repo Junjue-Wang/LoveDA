@@ -35,7 +35,7 @@ mv ./CBST_2Urban.pth ./log/CBST_2Urban.pth
 ```bash 
 bash ./scripts/predict_cbst.sh
 ```
-Submit your test results on [LoveDA Unsupervised Domain Adaptation Challenge](https://competitions.codalab.org/competitions/35865#) and you will get your Test score.
+Submit your test results on [LoveDA Unsupervised Domain Adaptation Challenge](https://codalab.lisn.upsaclay.fr/competitions/424) and you will get your Test score.
 
 ### Train CBST Model
 From Rural to Urban
