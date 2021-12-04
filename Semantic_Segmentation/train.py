@@ -6,7 +6,7 @@ from data.loveda import COLOR_MAP
 from tqdm import tqdm
 import random
 from module.tta import tta, Scale
-
+from module.viz import VisualizeSegmm
 
 er.registry.register_all()
 
@@ -19,7 +19,7 @@ def evaluate_cls_fn(self, test_dataloader, config=None):
     vis_dir = os.path.join(self._model_dir, 'vis-{}'.format(self.checkpoint.global_step))
 
     palette = np.array(list(COLOR_MAP.values())).reshape(-1).tolist()
-    viz_op = er.viz.VisualizeSegmm(vis_dir, palette)
+    viz_op = VisualizeSegmm(vis_dir, palette)
 
     with torch.no_grad():
         for img, gt in tqdm(test_dataloader):
