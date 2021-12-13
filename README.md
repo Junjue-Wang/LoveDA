@@ -14,6 +14,8 @@ LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segment
 
 
 ## News
+- 2021/12/13, Pre-trained urls for HRNet have been updated.
+
 - 2021/12/10, LoveDA has been included in
 [<b>Torchgeo</b>](https://github.com/microsoft/torchgeo/blob/main/torchgeo/datasets/loveda.py).
 

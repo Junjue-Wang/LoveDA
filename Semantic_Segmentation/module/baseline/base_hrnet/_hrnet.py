@@ -27,12 +27,13 @@ BatchNorm2d = nn.BatchNorm2d
 BN_MOMENTUM = 0.1
 
 __all__ = ['HighResolutionNet', 'HighResolutionModule',
-           'hrnetv2_w18', 'hrnetv2_w32', 'hrnetv2_w40']
+           'hrnetv2_w18', 'hrnetv2_w32', 'hrnetv2_w40', 'hrnetv2_w48']
 
 model_urls = {
-    'hrnetv2_w18': 'https://s3.ap-northeast-2.amazonaws.com/open-mmlab/pretrain/third_party/hrnetv2_w18-00eb2006.pth',
-    'hrnetv2_w32': 'https://s3.ap-northeast-2.amazonaws.com/open-mmlab/pretrain/third_party/hrnetv2_w32-dc9eeb4f.pth',
-    'hrnetv2_w40': 'https://s3.ap-northeast-2.amazonaws.com/open-mmlab/pretrain/third_party/hrnetv2_w40-ed0b031c.pth',
+    "hrnetv2_w18": "https://download.openmmlab.com/pretrain/third_party/hrnetv2_w18-00eb2006.pth",
+    "hrnetv2_w32": "https://download.openmmlab.com/pretrain/third_party/hrnetv2_w32-dc9eeb4f.pth",
+    "hrnetv2_w40": "https://download.openmmlab.com/pretrain/third_party/hrnetv2_w40-ed0b031c.pth",
+    "hrnetv2_w48": "https://download.openmmlab.com/pretrain/third_party/hrnetv2_w48-d2186c55.pth",
 }
 model_extra = dict(
     hrnetv2_w18=dict(
