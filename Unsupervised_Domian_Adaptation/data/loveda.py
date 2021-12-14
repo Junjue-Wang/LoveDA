@@ -58,13 +58,20 @@ class LoveDA(Dataset):
 
     def __getitem__(self, idx):
         image = imread(self.rgb_filepath_list[idx])
-        mask = imread(self.cls_filepath_list[idx]).astype(np.long) -1
-        if self.transforms is not None:
-            blob = self.transforms(image=image, mask=mask)
-            image = blob['image']
-            mask = blob['mask']
+        if len(self.cls_filepath_list) > 0:
+            mask = imread(self.cls_filepath_list[idx]).astype(np.long) -1
+            if self.transforms is not None:
+                blob = self.transforms(image=image, mask=mask)
+                image = blob['image']
+                mask = blob['mask']
 
-        return image, dict(cls=mask, fname=os.path.basename(self.rgb_filepath_list[idx]))
+            return image, dict(cls=mask, fname=os.path.basename(self.rgb_filepath_list[idx]))
+        else:
+            if self.transforms is not None:
+                blob = self.transforms(image=image)
+                image = blob['image']
+
+            return image, dict(fname=os.path.basename(self.rgb_filepath_list[idx]))
 
     def __len__(self):
         return len(self.rgb_filepath_list)
