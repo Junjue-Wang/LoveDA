@@ -81,7 +81,8 @@ class LoveDA(Dataset):
 
     def __getitem__(self, idx):
         image = imread(self.rgb_filepath_list[idx])
-        mask = imread(self.cls_filepath_list[idx]).astype(np.long) -1
+        if len(self.cls_filepath_list) > 0:
+            mask = imread(self.cls_filepath_list[idx]).astype(np.long) -1
         # mask = reclassify(mask)
         if self.transforms is not None:
             blob = self.transforms(image=image, mask=mask)
