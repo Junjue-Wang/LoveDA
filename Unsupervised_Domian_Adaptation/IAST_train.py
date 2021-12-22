@@ -105,7 +105,7 @@ def main():
                 pseudo_dir = os.path.join(save_pseudo_label_dir, str(i_iter))
                 pseudo_pred_dir = generate_pseudo(model, evalloader, pseudo_dir, pseudo_dict=cfg.PSEIDO_DICT, logger=logger)
                 target_config = cfg.TARGET_DATA_CONFIG
-                target_config['mask_dir'] = pseudo_pred_dir
+                target_config['mask_dir'] = [pseudo_pred_dir]
                 logger.info(target_config)
                 targetloader = LoveDALoader(target_config)
                 targetloader_iter = Iterator(targetloader)

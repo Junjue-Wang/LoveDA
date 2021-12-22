@@ -122,13 +122,8 @@ def main():
                 # pseudo-label maps generation
                 label_selection(cls_thresh, image_name_tgt_list, i_iter, save_prob_path, save_pred_path, save_pseudo_label_path, save_pseudo_label_color_path, save_round_eval_path, logger)
                 ########### model retraining
-                # tardata_cfg = cfg.TARGET_DATA_CONFIG
-                # mix_cfg = cfg.SOURCE_DATA_CONFIG.copy()
-                # mix_cfg['image_dir'] += tardata_cfg['image_dir']
-                # mix_cfg['mask_dir'].append(save_pseudo_label_path)
-                # mix_trainloader = Iterator(NJLoader(mix_cfg))
                 target_config = cfg.TARGET_DATA_CONFIG
-                target_config['mask_dir'] = save_pseudo_label_path
+                target_config['mask_dir'] = [save_pseudo_label_path]
                 logger.info(target_config)
                 targetloader = LoveDALoader(target_config)
                 targetloader_iter = Iterator(targetloader)
@@ -136,18 +131,6 @@ def main():
 
             model.train()
             lr = adjust_learning_rate(optimizer, i_iter, cfg)
-            # Train with Source
-            # optimizer.zero_grad()
-            # lr = adjust_learning_rate(optimizer, i_iter, cfg)
-            # batch = mix_trainloader.next()
-            # images_s, labels_s = batch[0]
-            # pred_mix = model(images_s.cuda())
-            # pred_mix = pred_mix[0] if isinstance(pred_mix, tuple) else pred_mix
-            # #Segmentation Loss
-            # loss = loss_calc(pred_mix, labels_s['cls'].cuda())
-            # loss.backward()
-            # clip_grad.clip_grad_norm_(filter(lambda p: p.requires_grad, model.parameters()), max_norm=35, norm_type=2)
-            # optimizer.step()
             batch = trainloader_iter.next()
 
             images_s, labels_s = batch[0]
@@ -232,17 +215,7 @@ def val(model, targetloader, save_round_eval_path, cfg):
                             # downsampling by ds_rate
                             conf_cls = conf_cls_temp[0:len_cls_temp:cfg.DS_RATE]
                             conf_dict[idx_cls].extend(conf_cls)
-                # elif cfg.KC_VALUE == 'prob':
-                #     for idx_cls in range(cfg.NUM_CLASSES):
-                #         idx_temp = pred_i == idx_cls
-                #         pred_cls_num[idx_cls] = pred_cls_num[idx_cls] + np.sum(idx_temp)
-                #         # prob slice
-                #         prob_cls_temp = out_i[:,:,idx_cls].astype(np.float32).ravel()
-                #         len_cls_temp = prob_cls_temp.size
-                #         # downsampling by ds_rate
-                #         prob_cls = prob_cls_temp[0:len_cls_temp:cfg.DS_RATE]
-                #         conf_dict[idx_cls].extend(prob_cls) # it should be prob_dict; but for unification, use conf_dict
- 
+
     return conf_dict, pred_cls_num, save_prob_path, save_pred_path, image_name_tgt_list  # return the dictionary containing all the class-wise confidence vectors
 
 
@@ -286,13 +259,8 @@ def label_selection(cls_thresh, image_name_tgt_list, round_idx, save_prob_path, 
     start_pl = time.time()
     viz_op = er.viz.VisualizeSegmm(save_pseudo_label_color_path, palette)
     for sample_name in image_name_tgt_list:
-        # sample_name = image_name_tgt_list[idx].split('.')[0]
         probmap_path = osp.join(save_prob_path, '{}.npy'.format(sample_name))
-        # pred_path = osp.join(save_pred_path, '{}.png'.format(sample_name))
         pred_prob = np.load(probmap_path)
-        # pred_label_trainIDs = np.asarray(Image.open(pred_path))
-        # pred_label_labelIDs = pred_label_trainIDs
-        # pred_label_trainIDs = pred_label_trainIDs.copy()
         weighted_prob = pred_prob / cls_thresh[:,None, None]
         weighted_pred_trainIDs = np.asarray(np.argmax(weighted_prob, axis=0), dtype=np.uint8)
         weighted_conf = np.amax(weighted_prob, axis=0)
