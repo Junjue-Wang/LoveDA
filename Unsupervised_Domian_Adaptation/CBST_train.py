@@ -17,7 +17,6 @@ palette = np.asarray(list(COLOR_MAP.values())).reshape((-1,)).tolist()
 
 
 
-
 parser = argparse.ArgumentParser(description='Run CBST methods.')
 
 parser.add_argument('--config_path',  type=str,

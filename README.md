@@ -23,7 +23,7 @@ LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segment
 [<b>LoveDA Semantic Segmentation Challenge</b>](https://codalab.lisn.upsaclay.fr/competitions/421), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://codalab.lisn.upsaclay.fr/competitions/424).
 
 - 2021/11/11, LoveDA has been included in [MMsegmentation](https://github.com/open-mmlab/mmsegmentation).
-🔥🔥 The Semantic Segmentation task can be prepared follow [dataset_prepare.md](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/dataset_prepare.md#loveda).🔥🔥 
+🔥🔥 The Semantic Segmentation task can be prepared follow [dataset_prepare.md](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/en/dataset_prepare.md#loveda).🔥🔥 
 
 
 

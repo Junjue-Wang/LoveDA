@@ -142,7 +142,6 @@ def main():
             loss_bbx_att_i = loss_bbx_att_i.view(-1)
             loss_bbx_att_i = loss_bbx_att_i[loss_bbx_att_i!=0]
             loss_bbx_att.append(loss_bbx_att_i)
-        #del pooling_result_i
 
         bounding_num = 0
         if len(cfg.BOX_SIZE) > 0:
