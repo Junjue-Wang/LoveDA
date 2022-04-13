@@ -40,8 +40,7 @@ LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segment
 ## Citation
 If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
 ```text
-    @inproceedings{
-        wang2021loveda,
+    @inproceedings{wang2021loveda,
         title={Love{DA}: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation},
         author={Junjue Wang and Zhuo Zheng and Ailong Ma and Xiaoyan Lu and Yanfei Zhong},
         booktitle={Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
