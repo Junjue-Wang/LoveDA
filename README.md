@@ -44,9 +44,10 @@ If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
     wang2021loveda,
     title={Love{DA}: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation},
     author={Junjue Wang and Zhuo Zheng and Ailong Ma and Xiaoyan Lu and Yanfei Zhong},
-    booktitle={Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2)},
+    booktitle={Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
     year={2021},
-    url={https://openreview.net/forum?id=bLBIbVaGDu}
+    volume = {1},
+    url={https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf}
     }
     @dataset{junjue_wang_2021_5706578,
       author={Junjue Wang and Zhuo Zheng and Ailong Ma and Xiaoyan Lu and Yanfei Zhong},
