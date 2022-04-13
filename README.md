@@ -47,7 +47,7 @@ If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
         editor = {J. Vanschoren and S. Yeung},
         year={2021},
         volume = {1},
-        pages = {1-12},
+        pages = {},
         url={https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Paper-round2.pdf}
     }
     @dataset{junjue_wang_2021_5706578,
