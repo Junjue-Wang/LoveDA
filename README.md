@@ -1,11 +1,5 @@
 <h2 align="center">LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation</h2>
-
-<h5 align="right">by <a href="https://junjue-wang.github.io/homepage/">Junjue Wang</a>, <a href="http://zhuozheng.top/">Zhuo Zheng</a>, Ailong Ma, Xiaoyan Lu, and <a href="http://rsidea.whu.edu.cn/">Yanfei Zhong</a></h5>
-[[`Video`](https://slideslive.com/38969542)],
-[[`Dataset`](https://doi.org/10.5281/zenodo.5706578)],
-[[`BibTeX`](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Bibtex-round2.bib)],
-[[`Leaderboard-SEG`](https://codalab.lisn.upsaclay.fr/competitions/421)],
-[[`Leaderboard-UDA`](https://codalab.lisn.upsaclay.fr/competitions/424)]
+[`Paper`]
 
 <div align="center">
   <img src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/LoveDA.jpg?raw=true">
