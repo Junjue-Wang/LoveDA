@@ -1,17 +1,17 @@
 <h2 align="center">LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation</h2>
 
 <h5 align="right">by <a href="https://junjue-wang.github.io/homepage/">Junjue Wang</a>, <a href="http://zhuozheng.top/">Zhuo Zheng</a>, Ailong Ma, Xiaoyan Lu, and <a href="http://rsidea.whu.edu.cn/">Yanfei Zhong</a></h5>
+[[`Paper`](https://www.researchgate.net/profile/Junjue-Wang/publication/355390292_LoveDA_A_Remote_Sensing_Land-Cover_Dataset_for_Domain_Adaptive_Semantic_Segmentation/links/617cd8bda767a03c14cecbc9/LoveDA-A-Remote-Sensing-Land-Cover-Dataset-for-Domain-Adaptive-Semantic-Segmentation.pdf?_sg%5B0%5D=Iw5FPui1-9iYrZN7aZO766hZA-LmublHlq8bp0694vUeIGDIzp5SGTfYN-OWhurZOujSPU0RDZ5lW0i02HVUew.7x9qdrvJwRmAnsqEyh5-xSFdh0M9AaTpdXcZCfHyhVl5GNLR5nlDIx8ctTXFy1HE1yNexX4ytzYqJWkAGJVTvg.Rrg3rXhcp9mMlLTU3n9Jf-h0Kt8VzHAd0AmhG2yPQxI-yRK6J0wAulUZ65dih6BQ9CbrQm0_23_nULO_BXwaJg&_sg%5B1%5D=KLu7pn0g50f8FwKE9x5iOuDPYb8VaOpX4k_ieq8eWJVVeJyXbZJO-O4pCL687QRxYbBnWdo7fJj8FZEOc3t3lgVVyDz0CFS-ff7LToXj4R9W.7x9qdrvJwRmAnsqEyh5-xSFdh0M9AaTpdXcZCfHyhVl5GNLR5nlDIx8ctTXFy1HE1yNexX4ytzYqJWkAGJVTvg.Rrg3rXhcp9mMlLTU3n9Jf-h0Kt8VzHAd0AmhG2yPQxI-yRK6J0wAulUZ65dih6BQ9CbrQm0_23_nULO_BXwaJg&_iepl=)],
+[[`Video`](https://slideslive.com/38969542)],
+[[`Dataset`](https://doi.org/10.5281/zenodo.5706578)]
+[[`BibTeX`](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Bibtex-round2.bib)],
+[[`Leaderboard-SEG`](https://codalab.lisn.upsaclay.fr/competitions/421)],
+[[`Leaderboard-UDA`](https://codalab.lisn.upsaclay.fr/competitions/424)]
 
 <div align="center">
   <img src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/LoveDA.jpg?raw=true">
   <img src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/statics_diff.png?raw=true">
 </div>
-
-
-This is an official implementation of LoveDA in our NeurIPS2021 Benchmark and Dataset Track paper "
-<a href="https://www.researchgate.net/profile/Junjue-Wang/publication/355390292_LoveDA_A_Remote_Sensing_Land-Cover_Dataset_for_Domain_Adaptive_Semantic_Segmentation/links/617cd8bda767a03c14cecbc9/LoveDA-A-Remote-Sensing-Land-Cover-Dataset-for-Domain-Adaptive-Semantic-Segmentation.pdf?_sg%5B0%5D=Iw5FPui1-9iYrZN7aZO766hZA-LmublHlq8bp0694vUeIGDIzp5SGTfYN-OWhurZOujSPU0RDZ5lW0i02HVUew.7x9qdrvJwRmAnsqEyh5-xSFdh0M9AaTpdXcZCfHyhVl5GNLR5nlDIx8ctTXFy1HE1yNexX4ytzYqJWkAGJVTvg.Rrg3rXhcp9mMlLTU3n9Jf-h0Kt8VzHAd0AmhG2yPQxI-yRK6J0wAulUZ65dih6BQ9CbrQm0_23_nULO_BXwaJg&_sg%5B1%5D=KLu7pn0g50f8FwKE9x5iOuDPYb8VaOpX4k_ieq8eWJVVeJyXbZJO-O4pCL687QRxYbBnWdo7fJj8FZEOc3t3lgVVyDz0CFS-ff7LToXj4R9W.7x9qdrvJwRmAnsqEyh5-xSFdh0M9AaTpdXcZCfHyhVl5GNLR5nlDIx8ctTXFy1HE1yNexX4ytzYqJWkAGJVTvg.Rrg3rXhcp9mMlLTU3n9Jf-h0Kt8VzHAd0AmhG2yPQxI-yRK6J0wAulUZ65dih6BQ9CbrQm0_23_nULO_BXwaJg&_iepl=">
-LoveDA: A Remote Sensing Land-Cover Dataset for Domain Adaptive Semantic Segmentation</a>"
-
 
 ## News
 - 2021/12/13, Pre-trained urls for HRNet have been updated.
