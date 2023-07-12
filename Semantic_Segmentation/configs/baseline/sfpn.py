@@ -1,6 +1,4 @@
 import torch.nn as nn
-from simplecv.module import fpn
-
 from configs.base.loveda import train, test, data, optimizer, learning_rate
 
 config = dict(
@@ -15,7 +13,6 @@ config = dict(
             fpn=dict(
                 in_channels_list=(256, 512, 1024, 2048),
                 out_channels=256,
-                conv_block=fpn.default_conv_block,
                 top_blocks=None,
             ),
             decoder=dict(
