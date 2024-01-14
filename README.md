@@ -65,8 +65,7 @@ If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
 
 
 ## Dataset and Contest
-The LoveDA dataset is released at [<b>Zenodo</b>](https://doi.org/10.5281/zenodo.5706578), 
-[<b>Google Drive</b>](https://drive.google.com/drive/folders/1ibYV0qwn4yuuh068Rnc-w4tPi0U0c-ti?usp=sharing)
+The LoveDA dataset is released at [<b>Zenodo</b>](https://doi.org/10.5281/zenodo.5706578)
 and [<b>Baidu Drive</b>](https://pan.baidu.com/s/1YrU1Y4Y0dS0f_OOHXpzspQ) Code: 27vc
 
 
