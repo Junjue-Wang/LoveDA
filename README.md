@@ -39,7 +39,7 @@
     * Inconsistent class distributions
 
 ## Citation
-If you use LoveDA in your research, please cite our coming NeurIPS2021 paper.
+If you use LoveDA in your research, please cite our NeurIPS2021 paper.
 ```text
     @inproceedings{NEURIPS DATASETS AND BENCHMARKS2021_4e732ced,
          author = {Wang, Junjue and Zheng, Zhuo and Ma, Ailong and Lu, Xiaoyan and Zhong, Yanfei},
