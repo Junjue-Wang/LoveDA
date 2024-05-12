@@ -15,6 +15,8 @@
 </div>
 
 ## News
+- 2024/05/12, The new version of LoveDA dataset has been released [<b>Torchgeo</b>](https://github.com/Junjue-Wang/EarthVQA).
+
 - 2021/12/13, Pre-trained urls for HRNet have been updated.
 
 - 2021/12/10, LoveDA has been included in
