@@ -93,3 +93,7 @@ All images and their associated annotations in LoveDA can be used for academic p
 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
 <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Junjue-Wang/LoveDA&type=Date)](https://star-history.com/#Junjue-Wang/LoveDA&Date)
