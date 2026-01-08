@@ -15,6 +15,8 @@
 </div>
 
 ## News
+- 2026/01/08, We extended the scope of LoveDA China to a global scale at [<b>EarthVL</b>](https://github.com/Junjue-Wang/EarthVL) dataset.
+
 - 2024/05/12, The new version of LoveDA dataset has been released at [<b>EarthVQA</b>](https://github.com/Junjue-Wang/EarthVQA) dataset.
 
 - 2021/12/13, Pre-trained urls for HRNet have been updated.
