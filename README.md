@@ -6,7 +6,7 @@
 [[`Video`](https://slideslive.com/38969542)],
 [[`Dataset`](https://doi.org/10.5281/zenodo.5706578)],
 [[`BibTeX`](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Bibtex-round2.bib)],
-[[`Leaderboard-SEG`](https://codalab.lisn.upsaclay.fr/competitions/421)],
+[[`Leaderboard-SEG`](https://www.codabench.org/competitions/13030)],
 [[`Leaderboard-UDA`](https://codalab.lisn.upsaclay.fr/competitions/424)]
 
 <div align="center">
@@ -25,7 +25,7 @@
 [<b>Torchgeo</b>](https://github.com/microsoft/torchgeo/blob/main/torchgeo/datasets/loveda.py).
 
 - 2021/11/30, The contests have been moved to new server:
-[<b>LoveDA Semantic Segmentation Challenge</b>](https://codalab.lisn.upsaclay.fr/competitions/421), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://codalab.lisn.upsaclay.fr/competitions/424).
+[<b>LoveDA Semantic Segmentation Challenge</b>](https://www.codabench.org/competitions/13030), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://codalab.lisn.upsaclay.fr/competitions/424).
 
 - 2021/11/11, LoveDA has been included in [MMsegmentation](https://github.com/open-mmlab/mmsegmentation).
 🔥🔥 The Semantic Segmentation task can be prepared follow [dataset_prepare.md](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/en/dataset_prepare.md#loveda).🔥🔥 
