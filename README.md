@@ -7,7 +7,7 @@
 [[`Dataset`](https://doi.org/10.5281/zenodo.5706578)],
 [[`BibTeX`](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/4e732ced3463d06de0ca9a15b6153677-Bibtex-round2.bib)],
 [[`Leaderboard-SEG`](https://www.codabench.org/competitions/13030)],
-[[`Leaderboard-UDA`](https://codalab.lisn.upsaclay.fr/competitions/424)]
+[[`Leaderboard-UDA`](https://www.codabench.org/competitions/13037)]
 
 <div align="center">
   <img src="https://github.com/Junjue-Wang/resources/blob/main/LoveDA/LoveDA.jpg?raw=true">
@@ -15,6 +15,8 @@
 </div>
 
 ## News
+- 2026/01/22, We moved the evaluation platform to [<b>LoveDA Semantic Segmentation Challenge</b>](https://www.codabench.org/competitions/13030), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://www.codabench.org/competitions/13037).
+
 - 2026/01/08, We extended the scope of LoveDA from China to a global scale at [<b>EarthVL</b>](https://github.com/Junjue-Wang/EarthVL) dataset.
 
 - 2024/05/12, The new version of LoveDA dataset has been released at [<b>EarthVQA</b>](https://github.com/Junjue-Wang/EarthVQA) dataset.
@@ -25,7 +27,7 @@
 [<b>Torchgeo</b>](https://github.com/microsoft/torchgeo/blob/main/torchgeo/datasets/loveda.py).
 
 - 2021/11/30, The contests have been moved to new server:
-[<b>LoveDA Semantic Segmentation Challenge</b>](https://www.codabench.org/competitions/13030), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://codalab.lisn.upsaclay.fr/competitions/424).
+[<b>LoveDA Semantic Segmentation Challenge</b>](https://www.codabench.org/competitions/13030), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://www.codabench.org/competitions/13037).
 
 - 2021/11/11, LoveDA has been included in [MMsegmentation](https://github.com/open-mmlab/mmsegmentation).
 🔥🔥 The Semantic Segmentation task can be prepared follow [dataset_prepare.md](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/en/dataset_prepare.md#loveda).🔥🔥 
@@ -81,7 +83,7 @@ Category labels: background – 1, building – 2, road – 3,
                  which should be ignored. The provided data loader will help you construct your pipeline.  
                  
 
-Submit your test results on [<b>LoveDA Semantic Segmentation Challenge</b>](https://codalab.lisn.upsaclay.fr/competitions/421), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://codalab.lisn.upsaclay.fr/competitions/424).
+Submit your test results on [<b>LoveDA Semantic Segmentation Challenge</b>](https://www.codabench.org/competitions/13030), [<b>LoveDA Unsupervised Domain Adaptation Challenge</b>](https://www.codabench.org/competitions/13037).
 You will get your Test scores smoothly.
 
 Feel free to design your own models, and we are looking forward to your exciting results!
