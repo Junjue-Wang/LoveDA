@@ -100,4 +100,10 @@ All images and their associated annotations in LoveDA can be used for academic p
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Junjue-Wang/LoveDA&type=Date)](https://star-history.com/#Junjue-Wang/LoveDA&Date)
+<a href="https://www.star-history.com/?type=date&repos=Junjue-Wang%2FLoveDA">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Junjue-Wang/LoveDA&type=date&theme=dark&legend=top-left&sealed_token=1L5DGllxPZNEgpCRnrELZSUAF948L8J451tdIaNWcBh5Vs_TPE1ArQYlnvTRnbJrCFf7uTaCvW9XWi7o7nsarA7BVtcn3reJnFYiY_aySMMgW_BHnwFSUi0mDyj9BRlVMQ2mt0TI1ZxRVgFG_TL5EhHw_s2PlvyOrZ5Y4H1YrCBoobf1MI1CcmhfV6zR" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Junjue-Wang/LoveDA&type=date&legend=top-left&sealed_token=1L5DGllxPZNEgpCRnrELZSUAF948L8J451tdIaNWcBh5Vs_TPE1ArQYlnvTRnbJrCFf7uTaCvW9XWi7o7nsarA7BVtcn3reJnFYiY_aySMMgW_BHnwFSUi0mDyj9BRlVMQ2mt0TI1ZxRVgFG_TL5EhHw_s2PlvyOrZ5Y4H1YrCBoobf1MI1CcmhfV6zR" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Junjue-Wang/LoveDA&type=date&legend=top-left&sealed_token=1L5DGllxPZNEgpCRnrELZSUAF948L8J451tdIaNWcBh5Vs_TPE1ArQYlnvTRnbJrCFf7uTaCvW9XWi7o7nsarA7BVtcn3reJnFYiY_aySMMgW_BHnwFSUi0mDyj9BRlVMQ2mt0TI1ZxRVgFG_TL5EhHw_s2PlvyOrZ5Y4H1YrCBoobf1MI1CcmhfV6zR" />
+ </picture>
+</a>
